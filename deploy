@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+go build bing-wallpaper.go
+sudo cp bing-wallpaper /usr/bin
+systemctl restart bing-wallpaper --user
