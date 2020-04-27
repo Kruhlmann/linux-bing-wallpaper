@@ -335,7 +335,7 @@ func setWallpaper(env, pic, picOpts string) {
 		setPlasmaWallpaper(pic)
 	default:
 		// other netWM/EWMH window manager
-		_, err := exec.Command("/usr/bin/feh", "--bg-tile", pic).Output()
+		_, err := exec.Command("/usr/bin/feh", "--bg-scale", pic).Output()
 		errChk(err)
 	}
 }
@@ -439,7 +439,7 @@ func main() {
 	idx := "0"
 	// dir is used to set the location where Bing pictures of the day
 	// are stored. HOME holds the path of the current user's home directory
-	dir := "/home/" + os.Getenv("LOGNAME") + "/Pictures/Bing"
+	dir := "/home/" + os.Getenv("LOGNAME") + "/img/bing_wallpapers"
 	// valid options for gnome and cinnamon are: none, wallpaper, centered, scaled, stretched, zoom, spanned
 	// valid options for lxde are: color (that is, disabled), stretch, crop, center, tile, screen
 	// valid options for lxqt are: color (that is, disabled), stretch, crop, center, tile, zoom
